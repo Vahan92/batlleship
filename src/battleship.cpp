@@ -31,9 +31,9 @@ void input(int** sea)
 	for (int i = number_of_ships - 1; i >= 0; --i) {
 		while (ships[i] > 0) {
 			cout << "the size of ship is " << i + 1 << "put it on a position you want..." << ships[i] << endl;
-			cout << "choose the abscissa!!! " << endl;
-			cin >> x;
 			cout << "choose the ordinate" << endl;
+			cin >> x;
+			cout << "choose the abscissa" << endl;
 			cin >> y;
 			cout << "choose the direction, 0 denotes vertical, 1 denotes horisontal \n";
 			cin >> position;
