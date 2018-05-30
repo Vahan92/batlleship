@@ -5,11 +5,12 @@
 #include <iostream>
 #include <stdio.h>
 #include <ctype.h>
+#include <assert.h>
 using namespace std;
 
 void input(int** sea) 
 {
-	int N = 10;
+	int N = 10; /** Intenger N's value determine sea (board) size (N*N) */
 	int number_of_ships = 4; /** \brief Integer number_of_ships's value defines ships quantity */
 	int ships[4]; /** \brief creating array with the length of 4 */
 	ships[0] = 1;
@@ -30,11 +31,13 @@ void input(int** sea)
 
 	for (int i = number_of_ships - 1; i >= 0; --i) {
 		while (ships[i] > 0) {
-			cout << "the size of ship is " << i + 1 << "put it on a position you want..." << ships[i] << endl;
+			cout << "the size of ship is " << i + 1 << " put it on a position you want..." <<endl;
 			cout << "choose the ordinate" << endl;
 			cin >> x;
 			cout << "choose the abscissa" << endl;
 			cin >> y;
+			assert(x);
+			assert(y);
 			cout << "choose the direction, 0 denotes vertical, 1 denotes horisontal \n";
 			cin >> position;
 			if (position == 0) {

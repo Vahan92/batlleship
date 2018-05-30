@@ -1,4 +1,3 @@
-HEADER := $(widcard ./src/*.h)
 SOURCE := $(wildcard ./src/*.cpp)
 OBJECTS := $(patsubst ./src/%.cpp, ./obj/%.o, $(SOURCE))
 CC := g++
@@ -14,8 +13,8 @@ obj/%.o : src/%.cpp
 	@echo "OBJ = $(OBJECTS)"
 	$(CC) -c $< -o $@
 	
+.PHONY: clean
 clean:
-	@rm -f *.o *.exe
 	@rm -rf bin
 	@rm -rf obj 
 	@rm -rf docs/html
