@@ -1,9 +1,10 @@
+HEADER := $(widcard ./src/*.h)
 SOURCE := $(wildcard ./src/*.cpp)
 OBJECTS := $(patsubst ./src/%.cpp, ./obj/%.o, $(SOURCE))
 CC := g++
 TARGET := battleships.exe
 
-$(TARGET) : $(OBJECTS)	
+$(TARGET) : $(OBJECTS) $(HEADER)	
 	@mkdir -p bin		
 	@$(CC) $^ -o bin/$@
 
