@@ -19,8 +19,8 @@ void input(int** sea)
 	ships[3] = 1;
 	int number_of_units = 0; /** \brief Initial unit number is 0 */
 
-	int x = 0;
-	int y = 0;
+	char x = 0;
+	char y = 0;
 	int position = 0; /** \brief how to put ships(vertical or hotizontal) */
 	int returned_value; /** \brief cheks if the position is ok/invalid position/out of sea */
 	int kill_result; /** \brief is the result of shooting */
@@ -36,8 +36,8 @@ void input(int** sea)
 			cin >> x;
 			cout << "choose the abscissa" << endl;
 			cin >> y;
-			assert(x);
-			assert(y);
+			//assert(x);
+			//assert(y);
 			cout << "choose the direction, 0 denotes vertical, 1 denotes horisontal \n";
 			cin >> position;
 			if (position == 0) {
