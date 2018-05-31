@@ -41,5 +41,5 @@ void input(int** sea);
 void clean(int** sea,int N);
 bool normal_coordinates(int x,int y,int size);
 
-int** matrix (int N);
+int** matrix (int** sea,int N);
 int rightNumberOfSquares(int** sea,int size);

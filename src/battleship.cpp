@@ -185,12 +185,12 @@ bool normal_coordinates(int x,int y,int size)
 	return true;
 }
 
-int** matrix ( int N){
+int** matrix ( int** sea,int N){
 	int k = 4;
-	int** sea = new int*[N];
+
 	for(int i = 0;i < k;i++)
 	{
-		sea[i] = new int[N];
+		
 		for(int j = 0;j < k; j++)
 		{
 			sea[i][j] = 1;
@@ -199,6 +199,7 @@ int** matrix ( int N){
 	}
 	return sea;
 }
+
 
 int rightNumberOfSquares(int** sea,int size)
 {
