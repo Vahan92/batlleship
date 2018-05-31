@@ -38,3 +38,8 @@ int kill_ship(int** sea, int x, int y, int N);
 
 ///inputs the ships and starts the game
 void input(int** sea);
+void clean(int** sea,int N);
+bool normal_coordinates(int x,int y,int size);
+
+int** matrix (int N);
+int rightNumberOfSquares(int** sea,int size);

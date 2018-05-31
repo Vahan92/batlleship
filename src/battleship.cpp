@@ -5,12 +5,12 @@
 #include <iostream>
 #include <stdio.h>
 #include <ctype.h>
-#include <assert.h>
+#include <assert.h> 
 using namespace std;
 
 void input(int** sea) 
 {
-	int N = 10; /** Intenger N's value determine sea (board) size (N*N) */
+	int N = 10;
 	int number_of_ships = 4; /** \brief Integer number_of_ships's value defines ships quantity */
 	int ships[4]; /** \brief creating array with the length of 4 */
 	ships[0] = 1;
@@ -19,8 +19,8 @@ void input(int** sea)
 	ships[3] = 1;
 	int number_of_units = 0; /** \brief Initial unit number is 0 */
 
-	char x = 0;
-	char y = 0;
+	int x = 0;
+	int y = 0;	
 	int position = 0; /** \brief how to put ships(vertical or hotizontal) */
 	int returned_value; /** \brief cheks if the position is ok/invalid position/out of sea */
 	int kill_result; /** \brief is the result of shooting */
@@ -31,13 +31,13 @@ void input(int** sea)
 
 	for (int i = number_of_ships - 1; i >= 0; --i) {
 		while (ships[i] > 0) {
-			cout << "the size of ship is " << i + 1 << " put it on a position you want..." <<endl;
+			cout << "the size of ship is " << i + 1 << "put it on a position you want..." << ships[i] << endl;
 			cout << "choose the ordinate" << endl;
 			cin >> x;
 			cout << "choose the abscissa" << endl;
 			cin >> y;
-			//assert(x);
-			//assert(y);
+			assert(x);
+			assert(y);
 			cout << "choose the direction, 0 denotes vertical, 1 denotes horisontal \n";
 			cin >> position;
 			if (position == 0) {
@@ -84,12 +84,14 @@ void input(int** sea)
 	}
 
 	cout << "You won\n";
-
+	clean(sea,N);
+}
+void clean(int** sea,int N)
+{
 	for (int i = 0; i < N; i++)
 		delete[] sea[i];
 	delete[] sea;
 }
-
 int** create_sea(int N) {
 	int** sea = new int*[N];
 	for (int i = 0; i < N; i++)
@@ -174,4 +176,42 @@ int kill_ship(int** sea, int x, int y, int N)
 		return 3;
 	}
 
+}
+bool normal_coordinates(int x,int y,int size)
+{
+	if (x < 1 || x > 10 || y < 1 || y > 10) {
+		return false;
+	}
+	return true;
+}
+
+int** matrix ( int N){
+	int k = 4;
+	int** sea = new int*[N];
+	for(int i = 0;i < k;i++)
+	{
+		sea[i] = new int[N];
+		for(int j = 0;j < k; j++)
+		{
+			sea[i][j] = 1;
+		}
+		k = k-1;
+	}
+	return sea;
+}
+
+int rightNumberOfSquares(int** sea,int size)
+{
+	int count = 0;
+	for(int i = 1; i < size; i++)
+	{
+		for(int j = 1; j < size; j++)
+		{
+				if(sea[i][j] == 1)
+				{
+							count +=1;
+				}
+		}
+	}
+	return count;
 }
