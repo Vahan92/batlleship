@@ -1,4 +1,4 @@
-HEADER := $(widcard ./src/*.h)
+HEADER := $(wildcard ./src/*.h)
 SOURCE := $(wildcard ./src/*.cpp)
 OBJECTS := $(patsubst ./src/%.cpp, ./obj/%.o, $(SOURCE))
 CC := g++
@@ -14,14 +14,14 @@ obj/%.o : src/%.cpp
 	@echo "OBJ = $(OBJECTS)"
 	$(CC) -c $< -o $@
 	
-.PHONY: clean
+.PHONY: clean doxygen tests
 clean:
-	@rm -rf bin
-	@rm -rf obj 
-	@rm -rf docs/html
-	@rm -rf docs/latex
+	@rm -rf bin obj docs/html docs/latex test_results tests/bin tests/obj
 
-.PHONY: doxygen
 doxygen:
 	@doxygen ./docs/Doxyfile
 
+tests: 
+	cd tests && $(MAKE)
+	./tests/bin/test1.exe
+	./tests/bin/test2.exe

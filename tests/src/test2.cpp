@@ -13,15 +13,13 @@ int main()
     int** sea =  create_sea ( size);
     int** matrix = sea;
     ofstream file;
-    file.open("test2.txt");
+    file.open("./test_results/test2.txt");
     file << "results of test2"<<endl;
     int countShip = rightNumberOfSquares( matrix, size);
     
-    if(countShip == units_of_ships)
-    {
+    if(countShip == units_of_ships) {
         file << " test2 passed"<<endl;
-    }
-    else{
+    } else {
         file << "test2 failed"<<endl;
     }
     file.close();
