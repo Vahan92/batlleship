@@ -204,9 +204,9 @@ int** matrix ( int** sea,int N){
 int rightNumberOfSquares(int** sea,int size)
 {
 	int count = 0;
-	for(int i = 1; i < size; i++)
+	for(int i = 0; i < size; i++)
 	{
-		for(int j = 1; j < size; j++)
+		for(int j = 0; j < size; j++)
 		{
 				if(sea[i][j] == 1)
 				{

@@ -9,13 +9,14 @@ int main()
     /* code */
     //int** sea = 0;
     int size = 10;
-    int units_of_ships = 9;
+    int units_of_ships = 7;
     int** sea =  create_sea ( size);
-    int** matrix = sea;
+    int** sea_new = matrix(sea,size);
+    //int** matrix = sea;
     ofstream file;
     file.open("./test_results/test2.txt");
     file << "results of test2"<<endl;
-    int countShip = rightNumberOfSquares( matrix, size);
+    int countShip = rightNumberOfSquares( sea_new, size);
     
     if(countShip == units_of_ships) {
         file << " test2 passed"<<endl;
