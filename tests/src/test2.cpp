@@ -16,7 +16,7 @@ int main()
     ofstream file;
     file.open("./test_results/test2.txt");
     file << "results of test2"<<endl;
-    int countShip = rightNumberOfSquares( sea_new, size);
+    int countShip = right_number_of_squares( sea_new, size);
     
     if(countShip == units_of_ships) {
         file << " test2 passed"<<endl;
